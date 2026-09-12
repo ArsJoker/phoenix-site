@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>Феникс — фестиваль инклюзивного спорта</title>
+  <meta name="description" content="Феникс — фестиваль инклюзивного спорта, объединяющий глухую и слышащую молодежь через спорт." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Феникс — на главную">
+      <span class="brand-mark">✦</span>
+      <span>ФЕНИКС</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#about">О проекте</a>
+      <a href="#events">События</a>
+      <a href="#training">Тренировки</a>
+      <a href="#dictionary">Видео-словарь РЖЯ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Фестиваль инклюзивного спорта</p>
+        <h1>Объединяем глухую и слышащую молодежь через спорт</h1>
+        <p class="lead">
+          Совместные тренировки, соревнования, новые знакомства и доступная коммуникационная среда.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-open-form>Принять участие</button>
+          <a class="btn btn-secondary" href="#dictionary">Смотреть словарь РЖЯ</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-hidden="true">
+        <div class="orb"></div>
+        <div class="hero-card-content">
+          <span class="big-number">9</span>
+          <span>спортивных направлений</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">О проекте</p>
+        <h2>Спорт, в котором коммуникация доступна каждому</h2>
+      </div>
+
+      <div class="grid three">
+        <article class="card">
+          <span class="icon">🏆</span>
+          <h3>Соревнования</h3>
+          <p>Инклюзивные спортивные события и командные игры.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🏐</span>
+          <h3>Тренировки</h3>
+          <p>Регулярные встречи, практика и налаживание коммуникации.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🤝</span>
+          <h3>Сообщество</h3>
+          <p>Пространство для знакомств, общения и совместного развития.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="events" class="section alt">
+      <div class="section-heading">
+        <p class="eyebrow">События</p>
+        <h2>Ближайшие активности «Феникса»</h2>
+      </div>
+
+      <div class="grid two">
+        <article class="event-card">
+          <div>
+            <span class="tag">Скоро</span>
+            <h3>Фестиваль инклюзивного спорта</h3>
+            <p>Дата и площадка появятся после подтверждения.</p>
+          </div>
+          <button class="text-button" data-open-form>Подать заявку →</button>
+        </article>
+
+        <article class="event-card">
+          <div>
+            <span class="tag">Регулярно</span>
+            <h3>Открытые тренировки</h3>
+            <p>Выбери направление и оставь заявку — мы свяжемся с тобой.</p>
+          </div>
+          <button class="text-button" data-open-form>Записаться →</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="training" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Тренировки</p>
+        <h2>Выбери направление</h2>
+      </div>
+
+      <div class="sports">
+        <span>Баскетбол</span><span>Волейбол</span><span>Футзал</span>
+        <span>Бочча</span><span>Боулинг</span><span>Шахматы</span>
+        <span>Русская лапта</span><span>Знамя</span><span>Настольный теннис</span>
+      </div>
+
+      <button class="btn btn-primary" data-open-form>Записаться на тренировку</button>
+    </section>
+
+    <section id="dictionary" class="section dictionary">
+      <div class="section-heading">
+        <p class="eyebrow">Видео-словарь РЖЯ</p>
+        <h2>Спортивные термины на русском жестовом языке</h2>
+        <p>Сейчас здесь демонстрационные карточки. Позже заменим их на твои студийные видео.</p>
+      </div>
+
+      <div class="dictionary-tools">
+        <input id="dictionarySearch" type="search" placeholder="Поиск слова…" aria-label="Поиск по словарю" />
+        <select id="dictionaryCategory" aria-label="Категория">
+          <option value="all">Все категории</option>
+          <option value="volleyball">Волейбол</option>
+          <option value="basketball">Баскетбол</option>
+          <option value="general">Общие термины</option>
+        </select>
+      </div>
+
+      <div class="grid three" id="dictionaryGrid">
+        <article class="word-card" data-word="подача" data-category="volleyball">
+          <div class="video-placeholder">
+            <span>▶</span>
+            <small>Здесь будет видео РЖЯ</small>
+          </div>
+          <div class="word-body">
+            <span class="tag">Волейбол</span>
+            <h3>Подача</h3>
+            <p>Введение мяча в игру.</p>
+          </div>
+        </article>
+
+        <article class="word-card" data-word="пас передача" data-category="basketball">
+          <div class="video-placeholder">
+            <span>▶</span>
+            <small>Здесь будет видео РЖЯ</small>
+          </div>
+          <div class="word-body">
+            <span class="tag">Баскетбол</span>
+            <h3>Пас</h3>
+            <p>Передача мяча партнеру по команде.</p>
+          </div>
+        </article>
+
+        <article class="word-card" data-word="судья" data-category="general">
+          <div class="video-placeholder">
+            <span>▶</span>
+            <small>Здесь будет видео РЖЯ</small>
+          </div>
+          <div class="word-body">
+            <span class="tag">Общие термины</span>
+            <h3>Судья</h3>
+            <p>Человек, контролирующий соблюдение правил.</p>
+          </div>
+        </article>
+      </div>
+
+      <p id="emptyState" class="empty" hidden>Ничего не найдено.</p>
+    </section>
+
+    <section class="section cta">
+      <div>
+        <p class="eyebrow">Хочешь участвовать?</p>
+        <h2>Оставь заявку — и присоединяйся к «Фениксу»</h2>
+      </div>
+      <button class="btn btn-light" data-open-form>Подать заявку</button>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Контакты</p>
+        <h2>Будем на связи</h2>
+      </div>
+      <p class="muted">Сюда позже добавим ссылку на VK, электронную почту и другие контакты проекта.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Феникс</span>
+    <span>Фестиваль инклюзивного спорта</span>
+  </footer>
+
+  <dialog id="applicationDialog">
+    <form method="dialog" class="dialog-card" id="applicationForm">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">Заявка</p>
+          <h2>Принять участие</h2>
+        </div>
+        <button class="close" value="cancel" aria-label="Закрыть">×</button>
+      </div>
+
+      <label>
+        Имя и фамилия
+        <input name="name" required placeholder="Например, Иван Иванов" />
+      </label>
+
+      <label>
+        Контакт
+        <input name="contact" required placeholder="Телефон, Telegram или e-mail" />
+      </label>
+
+      <label>
+        Направление
+        <select name="sport" required>
+          <option value="">Выбери вид спорта</option>
+          <option>Баскетбол</option>
+          <option>Волейбол</option>
+          <option>Футзал</option>
+          <option>Бочча</option>
+          <option>Боулинг</option>
+          <option>Шахматы</option>
+          <option>Русская лапта</option>
+          <option>Знамя</option>
+          <option>Настольный теннис</option>
+        </select>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" required />
+        <span>Согласен(на) на обработку данных для связи по заявке.</span>
+      </label>
+
+      <button type="submit" class="btn btn-primary">Отправить заявку</button>
+      <p class="form-note">
+        На этой первой версии форма демонстрационная. Следующим этапом подключим сохранение заявок в базу.
+      </p>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Заявка сохранена в демо-режиме.</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
