@@ -87,9 +87,37 @@
     <p class="intro">Здесь будут размещаться видеозаписи жестов по общим и спортивным категориям.</p>
     <div class="filters"><input id="search" placeholder="Поиск слова…"><select id="cat"><option value="all">Все категории</option><option value="volleyball">Волейбол</option><option value="basketball">Баскетбол</option><option value="general">Общие</option></select></div>
     <div class="words">
-      <article data-word="подача" data-cat="volleyball"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Подача</h3><p>Волейбол</p></article>
-      <article data-word="пас передача" data-cat="basketball"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Пас</h3><p>Баскетбол</p></article>
-      <article data-word="судья" data-cat="general"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Судья</h3><p>Общие термины</p></article>
+      <article class="vk-word-card" data-word="тест видео ржя" data-cat="general">
+        <button class="video vk-video-button"
+                type="button"
+                data-vk-owner="192439762"
+                data-vk-video="456239210"
+                aria-label="Открыть видео РЖЯ">
+          <span class="play">▶</span>
+          <small>Смотреть VK Видео</small>
+        </button>
+        <h3>Тестовое видео РЖЯ</h3>
+        <p>Общие термины</p>
+      </article>
+
+      <article data-word="подача" data-cat="volleyball">
+        <div class="video placeholder">＋<small>Следующее видео</small></div>
+        <h3>Подача</h3><p>Волейбол</p>
+      </article>
+
+      <article data-word="пас передача" data-cat="basketball">
+        <div class="video placeholder">＋<small>Следующее видео</small></div>
+        <h3>Пас</h3><p>Баскетбол</p>
+      </article>
+    </div>
+
+    <div class="video-modal" id="videoModal" hidden>
+      <div class="video-modal-backdrop" data-close-video></div>
+      <div class="video-modal-card">
+        <button class="video-close" type="button" data-close-video aria-label="Закрыть">×</button>
+        <div class="video-frame-wrap" id="videoFrameWrap"></div>
+        <a class="vk-external" id="vkExternal" href="#" target="_blank" rel="noopener">Открыть видео во VK →</a>
+      </div>
     </div>
   </section>
 

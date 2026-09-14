@@ -47,3 +47,32 @@ form.onsubmit=async e=>{
 const s=document.getElementById('search'),c=document.getElementById('cat'),cards=[...document.querySelectorAll('.words article')];
 function filter(){const q=s.value.toLowerCase();cards.forEach(x=>x.hidden=!(x.dataset.word.includes(q)&&(c.value==='all'||x.dataset.cat===c.value)));}
 s.oninput=filter;c.onchange=filter;
+
+
+// V8 — VK Video dictionary player
+const videoModal=document.getElementById('videoModal');
+const videoFrameWrap=document.getElementById('videoFrameWrap');
+const vkExternal=document.getElementById('vkExternal');
+
+function openVkVideo(ownerId, videoId){
+  const pageUrl=`https://vkvideo.ru/video${ownerId}_${videoId}`;
+  // VK's public embed endpoint. If VK blocks embedding for a particular video,
+  // the external link remains available below the player.
+  const embedUrl=`https://vk.com/video_ext.php?oid=${encodeURIComponent(ownerId)}&id=${encodeURIComponent(videoId)}&hd=2&autoplay=1`;
+  videoFrameWrap.innerHTML=`<iframe src="${embedUrl}" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen title="VK Видео"></iframe>`;
+  vkExternal.href=pageUrl;
+  videoModal.hidden=false;
+  document.body.style.overflow='hidden';
+}
+
+function closeVkVideo(){
+  videoModal.hidden=true;
+  videoFrameWrap.innerHTML='';
+  document.body.style.overflow='';
+}
+
+document.querySelectorAll('.vk-video-button').forEach(button=>{
+  button.addEventListener('click',()=>openVkVideo(button.dataset.vkOwner,button.dataset.vkVideo));
+});
+document.querySelectorAll('[data-close-video]').forEach(button=>button.addEventListener('click',closeVkVideo));
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && videoModal && !videoModal.hidden) closeVkVideo();});

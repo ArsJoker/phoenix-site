@@ -48,3 +48,22 @@ dialog{width:min(580px,calc(100% - 25px));padding:0;border:0;border-radius:25px}
 
 .form-status{min-height:22px;margin:12px 0 0;font-weight:700;color:#2e7d32}
 #submitButton:disabled{opacity:.7;cursor:wait}
+
+/* V8 — VK Видео */
+.vk-video-button{width:100%;border:0;cursor:pointer}
+.vk-video-button:hover .play{transform:scale(1.12)}
+.play{transition:.2s ease}
+.placeholder{cursor:default}
+.video-modal[hidden]{display:none}
+.video-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
+.video-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(5px)}
+.video-modal-card{position:relative;z-index:1;width:min(960px,100%);background:#0b0b0b;border:1px solid #333;border-radius:24px;padding:18px;box-shadow:0 30px 100px rgba(0,0,0,.5)}
+.video-close{position:absolute;right:10px;top:-52px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:#111;font-size:27px;cursor:pointer}
+.video-frame-wrap{width:100%;aspect-ratio:16/9;background:#000;border-radius:15px;overflow:hidden}
+.video-frame-wrap iframe{width:100%;height:100%;border:0;display:block}
+.vk-external{display:block;margin-top:14px;text-align:center;color:#ff7024;font-weight:800}
+@media(max-width:600px){
+  .video-modal{padding:10px}
+  .video-modal-card{padding:10px;border-radius:18px}
+  .video-close{top:-48px;right:4px}
+}
