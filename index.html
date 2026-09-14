@@ -10,9 +10,10 @@
 <body>
 <header class="site-header">
   <a class="brand" href="#top">
-    <img src="logo-phoenix.png" alt="Логотип Феникс">
+    <img src="logo-phoenix.png" alt="Феникс">
     <strong>ФЕНИКС</strong>
   </a>
+
   <nav id="nav">
     <a href="#about">О проекте</a>
     <a href="#events">События</a>
@@ -20,75 +21,99 @@
     <a href="#dictionary">Видео-словарь РЖЯ</a>
     <a href="#contacts">Контакты</a>
   </nav>
-  <button id="menu" class="menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+
+  <button class="header-cta" data-open>Принять участие</button>
+  <button id="menu" class="menu" aria-label="Меню" aria-expanded="false">☰</button>
 </header>
 
 <main id="top">
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-copy">
-    <p class="eyebrow">ФЕСТИВАЛЬ ИНКЛЮЗИВНОГО СПОРТА</p>
-    <h1>РАЗНЫЕ<br>ЛЮДИ.<br><span>ОДНА ЦЕЛЬ.</span></h1>
-    <p class="lead">Совместные тренировки, соревнования, новые знакомства и доступная коммуникационная среда.</p>
-    <div class="actions">
-      <button class="btn primary" data-open>Принять участие →</button>
-      <a class="btn outline" href="#dictionary">Смотреть словарь РЖЯ</a>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">ФЕСТИВАЛЬ ИНКЛЮЗИВНОГО СПОРТА</p>
+        <h1>РАЗНЫЕ<br>ЛЮДИ.<br><span>ОДНА ЦЕЛЬ.</span></h1>
+        <p class="lead">Совместные тренировки, соревнования, новые знакомства и доступная коммуникационная среда.</p>
+
+        <div class="actions">
+          <button class="btn primary" data-open>Принять участие →</button>
+          <a class="btn outline" href="#dictionary">Смотреть словарь РЖЯ</a>
+        </div>
+      </div>
+
+      <div class="hero-logo-wrap" aria-hidden="true">
+        <img src="logo-phoenix.png" class="hero-logo" alt="">
+      </div>
     </div>
-  </div>
 
-  <div class="features">
-    <a href="#events"><b>🏆</b><strong>Соревнования</strong><small>Больше, чем игра</small></a>
-    <a href="#training"><b>🏋️</b><strong>Тренировки</strong><small>Развитие и поддержка</small></a>
-    <a href="#about"><b>♧</b><strong>Сообщество</strong><small>Новые знакомства</small></a>
-    <a href="#about"><b>♡</b><strong>Инклюзия</strong><small>Доступная среда</small></a>
-  </div>
-</section>
+    <div class="features">
+      <a href="#events"><b>🏆</b><strong>Соревнования</strong><small>Больше, чем игра</small></a>
+      <a href="#training"><b>🏋️</b><strong>Тренировки</strong><small>Развитие и поддержка</small></a>
+      <a href="#about"><b>♧</b><strong>Сообщество</strong><small>Новые знакомства</small></a>
+      <a href="#about"><b>♡</b><strong>Инклюзия</strong><small>Доступная среда</small></a>
+    </div>
 
-<section id="about" class="section light">
-  <p class="eyebrow">О ПРОЕКТЕ</p>
-  <h2>Спорт объединяет людей</h2>
-  <p class="intro">«Феникс» — фестиваль инклюзивного спорта, объединяющий глухую и слышащую молодёжь через совместные тренировки, соревнования и общение.</p>
-  <div class="cards">
-    <article><i>01</i><h3>Коммуникация</h3><p>Создаём доступную коммуникационную среду.</p></article>
-    <article><i>02</i><h3>Спорт</h3><p>Тренировки и соревнования по разным направлениям.</p></article>
-    <article><i>03</i><h3>Сообщество</h3><p>Новые знакомства, командная работа и поддержка.</p></article>
-  </div>
-</section>
+    <a class="scroll-down" href="#about">⌄<span>Прокрутите вниз</span></a>
+  </section>
 
-<section id="events" class="section dark">
-  <p class="eyebrow">СОБЫТИЯ</p><h2>Ближайшие активности</h2>
-  <div class="event"><div><small>СКОРО</small><h3>Фестиваль инклюзивного спорта</h3><p>Дата и площадка появятся после подтверждения.</p></div><button data-open>Подать заявку →</button></div>
-</section>
+  <section id="about" class="section light">
+    <p class="eyebrow">О ПРОЕКТЕ</p>
+    <h2>Спорт объединяет людей</h2>
+    <p class="intro">«Феникс» — фестиваль инклюзивного спорта, объединяющий глухую и слышащую молодёжь через совместные тренировки, соревнования и общение.</p>
+    <div class="cards">
+      <article><i>01</i><h3>Коммуникация</h3><p>Создаём доступную коммуникационную среду.</p></article>
+      <article><i>02</i><h3>Спорт</h3><p>Тренировки и соревнования по разным направлениям.</p></article>
+      <article><i>03</i><h3>Сообщество</h3><p>Новые знакомства, командная работа и поддержка.</p></article>
+    </div>
+  </section>
 
-<section id="training" class="section light">
-  <p class="eyebrow">ТРЕНИРОВКИ</p><h2>Выбери направление</h2>
-  <div class="sports"><span>Баскетбол</span><span>Волейбол</span><span>Футзал</span><span>Бочча</span><span>Боулинг</span><span>Шахматы</span><span>Русская лапта</span><span>Знамя</span><span>Настольный теннис</span></div>
-  <button class="btn primary" data-open>Записаться →</button>
-</section>
+  <section id="events" class="section dark">
+    <p class="eyebrow">СОБЫТИЯ</p><h2>Ближайшие активности</h2>
+    <div class="event"><div><small>СКОРО</small><h3>Фестиваль инклюзивного спорта</h3><p>Дата и площадка появятся после подтверждения.</p></div><button data-open>Подать заявку →</button></div>
+  </section>
 
-<section id="dictionary" class="section dictionary">
-  <p class="eyebrow">ВИДЕО-СЛОВАРЬ РЖЯ</p><h2>Спортивные термины на РЖЯ</h2>
-  <p class="intro">Здесь будут размещаться видеозаписи жестов по общим и спортивным категориям.</p>
-  <div class="filters"><input id="search" placeholder="Поиск слова…"><select id="cat"><option value="all">Все категории</option><option value="volleyball">Волейбол</option><option value="basketball">Баскетбол</option><option value="general">Общие</option></select></div>
-  <div class="words">
-    <article data-word="подача" data-cat="volleyball"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Подача</h3><p>Волейбол</p></article>
-    <article data-word="пас передача" data-cat="basketball"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Пас</h3><p>Баскетбол</p></article>
-    <article data-word="судья" data-cat="general"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Судья</h3><p>Общие термины</p></article>
-  </div>
-</section>
+  <section id="training" class="section light">
+    <p class="eyebrow">ТРЕНИРОВКИ</p><h2>Выбери направление</h2>
+    <div class="sports">
+      <span>Баскетбол</span><span>Волейбол</span><span>Футзал</span><span>Бочча</span><span>Боулинг</span>
+      <span>Шахматы</span><span>Русская лапта</span><span>Знамя</span><span>Настольный теннис</span>
+    </div>
+    <button class="btn primary" data-open>Записаться →</button>
+  </section>
 
-<section id="contacts" class="section light"><p class="eyebrow">КОНТАКТЫ</p><h2>Будем на связи</h2><p class="intro">Здесь позже разместим VK, электронную почту и другие контакты проекта.</p></section>
+  <section id="dictionary" class="section dictionary">
+    <p class="eyebrow">ВИДЕО-СЛОВАРЬ РЖЯ</p><h2>Спортивные термины на РЖЯ</h2>
+    <p class="intro">Здесь будут размещаться видеозаписи жестов по общим и спортивным категориям.</p>
+    <div class="filters"><input id="search" placeholder="Поиск слова…"><select id="cat"><option value="all">Все категории</option><option value="volleyball">Волейбол</option><option value="basketball">Баскетбол</option><option value="general">Общие</option></select></div>
+    <div class="words">
+      <article data-word="подача" data-cat="volleyball"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Подача</h3><p>Волейбол</p></article>
+      <article data-word="пас передача" data-cat="basketball"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Пас</h3><p>Баскетбол</p></article>
+      <article data-word="судья" data-cat="general"><div class="video">▶<small>Видео РЖЯ</small></div><h3>Судья</h3><p>Общие термины</p></article>
+    </div>
+  </section>
+
+  <section id="contacts" class="section light">
+    <p class="eyebrow">КОНТАКТЫ</p><h2>Будем на связи</h2>
+    <p class="intro">Здесь позже разместим VK, электронную почту и другие контакты проекта.</p>
+  </section>
 </main>
 
 <footer><img src="logo-phoenix.png" alt=""><strong>ФЕНИКС</strong><span>Фестиваль инклюзивного спорта</span></footer>
 
-<dialog id="dialog"><form id="form">
-  <button type="button" id="close">×</button><p class="eyebrow">ЗАЯВКА</p><h2>Принять участие</h2>
-  <label>Имя и фамилия<input required></label>
-  <label>Контакт<input required placeholder="Телефон, Telegram или e-mail"></label>
-  <label>Направление<select required><option value="">Выберите</option><option>Баскетбол</option><option>Волейбол</option><option>Футзал</option><option>Бочча</option><option>Боулинг</option><option>Шахматы</option><option>Русская лапта</option><option>Знамя</option><option>Настольный теннис</option></select></label>
-  <button class="btn primary">Отправить заявку</button>
-  <small class="note">Пока форма демонстрационная.</small>
-</form></dialog>
+<dialog id="dialog">
+  <form id="form">
+    <button type="button" id="close">×</button>
+    <p class="eyebrow">ЗАЯВКА</p>
+    <h2>Принять участие</h2>
+    <label>Имя и фамилия<input required></label>
+    <label>Контакт<input required placeholder="Телефон, Telegram или e-mail"></label>
+    <label>Направление<select required><option value="">Выберите</option><option>Баскетбол</option><option>Волейбол</option><option>Футзал</option><option>Бочча</option><option>Боулинг</option><option>Шахматы</option><option>Русская лапта</option><option>Знамя</option><option>Настольный теннис</option></select></label>
+    <button class="btn primary">Отправить заявку</button>
+    <small class="note">Пока форма демонстрационная.</small>
+  </form>
+</dialog>
+
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
