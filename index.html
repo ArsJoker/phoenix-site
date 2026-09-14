@@ -106,11 +106,41 @@
     <button type="button" id="close">×</button>
     <p class="eyebrow">ЗАЯВКА</p>
     <h2>Принять участие</h2>
-    <label>Имя и фамилия<input required></label>
-    <label>Контакт<input required placeholder="Телефон, Telegram или e-mail"></label>
-    <label>Направление<select required><option value="">Выберите</option><option>Баскетбол</option><option>Волейбол</option><option>Футзал</option><option>Бочча</option><option>Боулинг</option><option>Шахматы</option><option>Русская лапта</option><option>Знамя</option><option>Настольный теннис</option></select></label>
-    <button class="btn primary">Отправить заявку</button>
-    <small class="note">Пока форма демонстрационная.</small>
+
+    <label>Имя и фамилия
+      <input name="name" required placeholder="Например, Иван Иванов">
+    </label>
+
+    <label>Статус слуха
+      <select name="hearingStatus" required>
+        <option value="">Выберите</option>
+        <option value="Глухой">Глухой</option>
+        <option value="Слабослышащий">Слабослышащий</option>
+        <option value="Слышащий">Слышащий</option>
+      </select>
+    </label>
+
+    <label>Контакт
+      <input name="contact" required placeholder="Телефон, Telegram или e-mail">
+    </label>
+
+    <label>Вид спорта
+      <select name="sport" required>
+        <option value="">Выберите</option>
+        <option>Баскетбол</option>
+        <option>Волейбол</option>
+        <option>Футзал</option>
+        <option>Бочча</option>
+        <option>Боулинг</option>
+        <option>Шахматы</option>
+        <option>Русская лапта</option>
+        <option>Знамя</option>
+        <option>Настольный теннис</option>
+      </select>
+    </label>
+
+    <button class="btn primary" id="submitButton" type="submit">Отправить заявку</button>
+    <p class="form-status" id="formStatus" aria-live="polite"></p>
   </form>
 </dialog>
 
