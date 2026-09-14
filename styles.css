@@ -67,3 +67,88 @@ dialog{width:min(580px,calc(100% - 25px));padding:0;border:0;border-radius:25px}
   .video-modal-card{padding:10px;border-radius:18px}
   .video-close{top:-48px;right:4px}
 }
+
+
+/* V9 — живое превью карточки и более компактный VK-плеер */
+.words{align-items:start}
+.vk-word-card{overflow:hidden}
+.vk-video-button.has-poster{
+  position:relative;
+  display:block;
+  padding:0;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#111;
+}
+.video-poster{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s ease, filter .3s ease;
+}
+.video-poster-shade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.20));
+}
+.poster-play{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  color:#111;
+  font-size:28px;
+  line-height:1;
+  padding-left:4px;
+  box-shadow:0 12px 35px rgba(0,0,0,.3);
+  transition:transform .2s ease, background .2s ease;
+}
+.vk-video-button:hover .video-poster{transform:scale(1.025);filter:brightness(.92)}
+.vk-video-button:hover .poster-play{transform:translate(-50%,-50%) scale(1.08);background:#fff}
+.word-card-body{background:#fff;padding:20px 24px 22px}
+.word-card-body h3{margin:0 0 10px}
+.word-card-body p{margin:0}
+
+.video-modal{padding:16px}
+.video-modal-card{
+  width:min(980px,calc(100vw - 32px));
+  padding:14px;
+  border-radius:22px;
+}
+.video-frame-wrap{border-radius:14px}
+.video-close{right:0;top:-52px}
+
+@media(max-width:600px){
+  .words{grid-template-columns:1fr}
+  .poster-play{width:58px;height:58px;font-size:23px}
+  .word-card-body{padding:18px 20px 20px}
+  .video-modal{
+    align-items:center;
+    padding:12px;
+  }
+  .video-modal-card{
+    width:100%;
+    padding:9px;
+    border-radius:18px;
+  }
+  .video-close{
+    top:-50px;
+    right:0;
+    width:44px;
+    height:44px;
+  }
+  .vk-external{
+    margin-top:10px;
+    padding:4px 0 2px;
+    font-size:16px;
+  }
+}
