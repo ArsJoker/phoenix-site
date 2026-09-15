@@ -227,15 +227,53 @@
     </label>
 
     
-        <label class="consent-row">
-          <input type="checkbox" id="dataConsent" name="dataConsent" required>
-          <span>Я согласен(на) на обработку предоставленных данных для регистрации и связи со мной по вопросам мероприятий проекта «Феникс».</span>
-        </label>
+        
+        <div class="consent-block">
+          <label class="consent-row" for="dataConsent">
+            <input type="checkbox" id="dataConsent" name="dataConsent" required>
+            <span>Я согласен(на) на обработку персональных данных для регистрации и связи со мной по вопросам мероприятий проекта «Феникс».</span>
+          </label>
+          <button class="consent-link" id="openConsentDetails" type="button">Согласие на обработку персональных данных</button>
+        </div>
+
 <button disabled class="btn primary" id="submitButton" type="submit">Отправить заявку</button>
     <p class="form-status" id="formStatus" aria-live="polite"></p>
   </form>
 </dialog>
 
 <script src="script.js"></script>
+
+<dialog class="consent-dialog" id="consentDetailsDialog">
+  <div class="consent-dialog-inner">
+    <div class="consent-dialog-head">
+      <div>
+        <span class="eyebrow">ПЕРСОНАЛЬНЫЕ ДАННЫЕ</span>
+        <h2>Согласие на обработку персональных данных</h2>
+      </div>
+      <button class="consent-dialog-close" id="closeConsentDetails" type="button" aria-label="Закрыть">×</button>
+    </div>
+
+    <div class="consent-text">
+      <p>Отправляя заявку на участие в мероприятиях проекта «Феникс», я добровольно предоставляю указанные мной сведения и даю согласие на их обработку в целях регистрации на мероприятия и связи со мной по организационным вопросам.</p>
+
+      <h3>Какие данные мы получаем</h3>
+      <p>Имя и фамилия, указанный участником статус слуха, контактные данные и выбранный вид спорта.</p>
+
+      <h3>Для чего используются данные</h3>
+      <p>Для обработки заявки, формирования списка участников, организации тренировок и соревнований, а также для связи с участником по вопросам мероприятия.</p>
+
+      <h3>Как обрабатываются данные</h3>
+      <p>Данные могут собираться, записываться, систематизироваться, храниться, уточняться и использоваться только в объёме, необходимом для указанных целей. Данные не предназначены для публикации на сайте.</p>
+
+      <h3>Срок и отзыв согласия</h3>
+      <p>Согласие действует до достижения указанных целей либо до его отзыва участником. Для отзыва согласия или обращения по вопросам своих данных можно написать на электронную почту проекта: <a href="mailto:volt-02@mail.ru">volt-02@mail.ru</a>.</p>
+
+      <p class="consent-warning"><strong>Важно:</strong> это тестовая версия текста для прототипа сайта. Перед публичным запуском необходимо утвердить окончательный документ с реквизитами фактического оператора персональных данных и требованиями применимого законодательства.</p>
+    </div>
+
+    <button class="btn primary consent-understood" id="consentUnderstood" type="button">Понятно</button>
+  </div>
+</dialog>
+
 </body>
 </html>

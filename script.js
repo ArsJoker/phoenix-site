@@ -112,3 +112,27 @@ if(consentForm){
     setTimeout(syncConsentButton,0);
   });
 }
+
+
+// V13 — окно с полным текстом согласия
+const consentDetailsDialog=document.getElementById('consentDetailsDialog');
+const openConsentDetails=document.getElementById('openConsentDetails');
+const closeConsentDetails=document.getElementById('closeConsentDetails');
+const consentUnderstood=document.getElementById('consentUnderstood');
+
+function showConsentDetails(){
+  if(consentDetailsDialog && typeof consentDetailsDialog.showModal==='function'){
+    consentDetailsDialog.showModal();
+  }
+}
+function hideConsentDetails(){
+  if(consentDetailsDialog && consentDetailsDialog.open) consentDetailsDialog.close();
+}
+if(openConsentDetails) openConsentDetails.addEventListener('click',showConsentDetails);
+if(closeConsentDetails) closeConsentDetails.addEventListener('click',hideConsentDetails);
+if(consentUnderstood) consentUnderstood.addEventListener('click',hideConsentDetails);
+if(consentDetailsDialog){
+  consentDetailsDialog.addEventListener('click',e=>{
+    if(e.target===consentDetailsDialog) hideConsentDetails();
+  });
+}
