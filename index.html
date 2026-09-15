@@ -18,11 +18,11 @@
     <a href="#about">О проекте</a>
     <a href="#events">События</a>
     <a href="#training">Предложения</a>
-    <a href="#dictionary">Видео-словарь РЖЯ</a>
+    <a href="dictionary.html">Видео-словарь РЖЯ</a>
     <a href="#contacts">Контакты</a>
   </nav>
 
-  <button class="header-cta" data-open>Принять участие</button>
+  <a class="header-cta" href="#events">Принять участие</a>
   <button id="menu" class="menu" aria-label="Меню" aria-expanded="false">☰</button>
 </header>
 
@@ -37,21 +37,14 @@
         <p class="lead">Совместные тренировки, соревнования, новые знакомства и доступная коммуникационная среда.</p>
 
         <div class="actions">
-          <button class="btn primary" data-open>Принять участие →</button>
-          <a class="btn outline" href="#dictionary">Смотреть словарь РЖЯ</a>
+          <a class="btn primary" href="#events">Принять участие →</a>
+          <a class="btn outline" href="dictionary.html">Смотреть словарь РЖЯ</a>
         </div>
       </div>
 
       <div class="hero-logo-wrap" aria-hidden="true">
         <img src="logo-phoenix.png" class="hero-logo" alt="">
       </div>
-    </div>
-
-    <div class="features features-v15">
-      <a href="#events"><b class="feature-icon"><svg viewBox="0 0 24 24"><path d="M8 4h8v3a4 4 0 0 1-8 0V4Zm0 1H5v2a4 4 0 0 0 4 4m7-6h3v2a4 4 0 0 1-4 4M12 11v5m-4 4h8m-4-4c-2 0-3 1-3 4h6c0-3-1-4-3-4"/></svg></b><strong>Соревнования</strong><small>Азарт и командный дух</small></a>
-      <a href="#training"><b class="feature-icon"><svg viewBox="0 0 24 24"><path d="M4 19h4l10-10-4-4L4 15v4Zm8-12 4 4m-9 5 2 2M14 5l2-2 4 4-2 2"/></svg></b><strong>Предложения</strong><small>Идеи участников</small></a>
-      <a href="#about"><b class="feature-icon"><svg viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-4 2-6 6-6s6 2 6 6m-2-4c1-1.3 2.3-2 4-2 4 0 6 2 6 6"/></svg></b><strong>Сообщество</strong><small>Знакомства и поддержка</small></a>
-      <a href="#about"><b class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 20s-8-4.8-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.2-8 10-8 10Z"/></svg></b><strong>Инклюзия</strong><small>Доступная коммуникация</small></a>
     </div>
 
     <a class="scroll-down" href="#about">⌄<span>Прокрутите вниз</span></a>
@@ -93,14 +86,14 @@
         <h3>Тренировка по волейболу</h3>
         <div class="event-meta"><span>📅 20 сентября</span><span>🕕 18:00</span><span>📍 Спортивный зал</span></div>
         <p class="event-note">Участие бесплатное. Уровень подготовки не важен. Возраст участников — от 14 до 35 лет.</p>
-        <button class="btn primary event-register" type="button" data-sport="Волейбол">Принять участие</button>
+        <button class="btn primary event-register" type="button" data-sport="Волейбол" data-event="Тренировка по волейболу" data-date="20 сентября" data-time="18:00" data-place="Спортивный зал">Принять участие</button>
       </article>
       <article class="event-card">
         <div class="event-top"><span class="event-sport">🏀 Баскетбол</span><span class="event-status is-open">Регистрация открыта</span></div>
         <h3>Тренировка по баскетболу</h3>
         <div class="event-meta"><span>📅 24 сентября</span><span>🕓 16:00</span><span>📍 Спортивный зал</span></div>
         <p class="event-note">Участие бесплатное. Уровень подготовки не важен. Возраст участников — от 14 до 35 лет.</p>
-        <button class="btn primary event-register" type="button" data-sport="Баскетбол">Принять участие</button>
+        <button class="btn primary event-register" type="button" data-sport="Баскетбол" data-event="Тренировка по баскетболу" data-date="24 сентября" data-time="16:00" data-place="Спортивный зал">Принять участие</button>
       </article>
       <article class="event-card">
         <div class="event-top"><span class="event-sport">🏃 Русская лапта</span><span class="event-status is-soon">Регистрация скоро</span></div>
@@ -139,39 +132,6 @@
     </form>
   </section>
 
-  <section id="dictionary" class="section dictionary">
-    <p class="eyebrow">ВИДЕО-СЛОВАРЬ РЖЯ</p><h2>Спортивные термины на РЖЯ</h2>
-    <p class="intro">Здесь будут размещаться видеозаписи жестов по общим и спортивным категориям.</p>
-    <div class="filters"><input id="search" placeholder="Поиск слова…"><select id="cat"><option value="all">Все категории</option><option value="concepts">Основные понятия и проект</option><option value="questions">Вопросы, время и информация</option><option value="festival">Фестиваль, церемонии и награждение</option><option value="communication">Общение и бытовые ситуации</option><option value="team">Команда и участники</option><option value="navigation">Навигация, помещения и экипировка</option><option value="documents">Документы и правила</option><option value="competition">Соревнования и судейство</option><option value="media">Медиа</option><option value="actions">Общие спортивные действия</option><option value="basketball">Баскетбол</option><option value="volleyball">Волейбол</option><option value="football">Футбол / Футзал</option><option value="bowling">Боулинг</option><option value="flag">Знамя</option><option value="tabletennis">Настольный теннис</option><option value="lapta">Русская лапта</option><option value="chess">Шахматы</option><option value="checkers">Шашки</option></select></div>
-    <div class="words">
-      <article class="vk-word-card" data-word="тест видео ржя" data-cat="concepts">
-        <button class="video vk-video-button has-poster"
-                type="button"
-                data-vk-owner="192439762"
-                data-vk-video="456239210"
-                aria-label="Открыть видео РЖЯ">
-          <img src="vk-video-poster.jpg" alt="" class="video-poster" loading="lazy">
-          <span class="video-poster-shade"></span>
-          <span class="poster-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6L17 12 9 7.2Z"/></svg></span>
-        </button>
-        <div class="word-card-body">
-          <h3>Тестовое видео РЖЯ</h3>
-          <p>Основные понятия и проект</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="video-modal" id="videoModal" hidden>
-      <div class="video-modal-backdrop" data-close-video></div>
-      <div class="video-modal-card">
-        <button class="video-close" type="button" data-close-video aria-label="Закрыть">×</button>
-        <div class="video-frame-wrap" id="videoFrameWrap"></div>
-        <a class="vk-external" id="vkExternal" href="#" target="_blank" rel="noopener">Открыть видео во VK →</a>
-      </div>
-    </div>
-  </section>
-
-  
 <section class="contacts-section" id="contacts">
   <div class="contacts-shell">
     <div class="contacts-copy">
@@ -212,7 +172,7 @@
     <nav class="footer-nav" aria-label="Навигация в подвале">
       <a href="#about">О проекте</a>
       <a href="#events">События</a>
-      <a href="#dictionary">Словарь РЖЯ</a>
+      <a href="dictionary.html">Словарь РЖЯ</a>
       <a href="#contacts">Контакты</a>
     </nav>
     <p class="footer-copy">© 2026 «Феникс»</p>
@@ -224,7 +184,8 @@
   <form id="form">
     <button type="button" id="close">×</button>
     <p class="eyebrow">ЗАЯВКА</p>
-    <h2>Принять участие</h2>
+    <h2 id="eventFormTitle">Принять участие</h2>
+    <div class="selected-event" id="selectedEvent" hidden><strong id="selectedEventName"></strong><span id="selectedEventMeta"></span></div>
 
     <label>Имя и фамилия
       <input name="name" required placeholder="Например, Иван Иванов">
@@ -243,20 +204,8 @@
       <input name="contact" required placeholder="Телефон, Telegram или e-mail">
     </label>
 
-    <label>Вид спорта
-      <select name="sport" required>
-        <option value="">Выберите</option>
-        <option>Баскетбол</option>
-        <option>Волейбол</option>
-        <option>Футзал</option>
-        <option>Бочча</option>
-        <option>Боулинг</option>
-        <option>Шахматы</option>
-        <option>Русская лапта</option>
-        <option>Знамя</option>
-        <option>Настольный теннис</option>
-      </select>
-    </label>
+    <input type="hidden" name="sport" id="eventSport">
+    <input type="hidden" name="event" id="eventName">
 
     
         

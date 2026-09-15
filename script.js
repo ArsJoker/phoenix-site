@@ -8,15 +8,16 @@ document.addEventListener('click',e=>{
 });
 
 const dialog=document.getElementById('dialog');
-document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>dialog.showModal());
-document.getElementById('close').onclick=()=>dialog.close();
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>dialog?.showModal());
+const closeButton=document.getElementById('close');
+if(closeButton) closeButton.onclick=()=>dialog.close();
 
 const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbx7wvkpEvXWzriyv0NVY1F7pa3-yOP9LsQcxazNKRWizLbWawc_TCTVFBry91N1P55t/exec';
 const form=document.getElementById('form');
 const submitButton=document.getElementById('submitButton');
 const formStatus=document.getElementById('formStatus');
 
-form.onsubmit=async e=>{
+if(form) form.onsubmit=async e=>{
   e.preventDefault();
   submitButton.disabled=true;
   submitButton.textContent='Отправляем…';
@@ -51,7 +52,7 @@ form.onsubmit=async e=>{
 
 const s=document.getElementById('search'),c=document.getElementById('cat'),cards=[...document.querySelectorAll('.words article')];
 function filter(){const q=s.value.toLowerCase();cards.forEach(x=>x.hidden=!(x.dataset.word.includes(q)&&(c.value==='all'||x.dataset.cat===c.value)));}
-s.oninput=filter;c.onchange=filter;
+if(s) s.oninput=filter;if(c) c.onchange=filter;
 
 
 // V8 — VK Video dictionary player
@@ -85,9 +86,18 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape' && videoModal && !vi
 // V15 — регистрация из карточки события
 document.querySelectorAll('.event-register').forEach(button=>{
   button.addEventListener('click',()=>{
-    const sportSelect=form.querySelector('[name="sport"]');
-    if(sportSelect) sportSelect.value=button.dataset.sport || '';
-    if(dialog && typeof dialog.showModal==='function') dialog.showModal();
+    if(!form || !dialog) return;
+    const sport=form.querySelector('[name="sport"]');
+    const event=form.querySelector('[name="event"]');
+    if(sport) sport.value=button.dataset.sport || '';
+    if(event) event.value=button.dataset.event || '';
+    const box=document.getElementById('selectedEvent');
+    const name=document.getElementById('selectedEventName');
+    const meta=document.getElementById('selectedEventMeta');
+    if(name) name.textContent=button.dataset.event || button.dataset.sport || '';
+    if(meta) meta.textContent=[button.dataset.date,button.dataset.time,button.dataset.place].filter(Boolean).join(' · ');
+    if(box) box.hidden=false;
+    dialog.showModal();
   });
 });
 

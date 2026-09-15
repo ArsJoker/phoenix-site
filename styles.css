@@ -588,3 +588,15 @@ img,video,iframe{max-width:100%}
   .features-v15 a strong{font-size:12px!important}
   .features-v15 a small{font-size:9px!important}
 }
+
+/* V17 — desktop-first cleanup */
+@media (min-width: 721px) {
+  .hero { min-height: 760px; }
+  .hero-inner { min-height: 690px; }
+  .hero .scroll-down { bottom: 24px; }
+}
+.header-cta { text-decoration:none; display:inline-flex; align-items:center; justify-content:center; }
+.selected-event { margin: 0 0 22px; padding: 16px 18px; border: 1px solid rgba(255,122,31,.28); border-radius: 14px; background: rgba(255,122,31,.08); }
+.selected-event strong { display:block; font-size:18px; margin-bottom:6px; }
+.selected-event span { display:block; opacity:.72; font-size:14px; }
+.dictionary { min-height: calc(100vh - 180px); padding-top: 150px; }

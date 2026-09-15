@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Феникс — фестиваль инклюзивного спорта</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo-phoenix.png" alt="Феникс">
+    <strong>ФЕНИКС</strong>
+  </a>
+
+  <nav id="nav">
+    <a href="index.html#about">О проекте</a>
+    <a href="index.html#events">События</a>
+    <a href="index.html#training">Предложения</a>
+    <a href="#dictionary">Видео-словарь РЖЯ</a>
+    <a href="index.html#contacts">Контакты</a>
+  </nav>
+
+  <a class="header-cta" href="index.html#events">Принять участие</a>
+  <button id="menu" class="menu" aria-label="Меню" aria-expanded="false">☰</button>
+</header>
+
+<main id="top">
+  <section id="dictionary" class="section dictionary">
+    <p class="eyebrow">ВИДЕО-СЛОВАРЬ РЖЯ</p><h2>Спортивные термины на РЖЯ</h2>
+    <p class="intro">Здесь будут размещаться видеозаписи жестов по общим и спортивным категориям.</p>
+    <div class="filters"><input id="search" placeholder="Поиск слова…"><select id="cat"><option value="all">Все категории</option><option value="concepts">Основные понятия и проект</option><option value="questions">Вопросы, время и информация</option><option value="festival">Фестиваль, церемонии и награждение</option><option value="communication">Общение и бытовые ситуации</option><option value="team">Команда и участники</option><option value="navigation">Навигация, помещения и экипировка</option><option value="documents">Документы и правила</option><option value="competition">Соревнования и судейство</option><option value="media">Медиа</option><option value="actions">Общие спортивные действия</option><option value="basketball">Баскетбол</option><option value="volleyball">Волейбол</option><option value="football">Футбол / Футзал</option><option value="bowling">Боулинг</option><option value="flag">Знамя</option><option value="tabletennis">Настольный теннис</option><option value="lapta">Русская лапта</option><option value="chess">Шахматы</option><option value="checkers">Шашки</option></select></div>
+    <div class="words">
+      <article class="vk-word-card" data-word="тест видео ржя" data-cat="concepts">
+        <button class="video vk-video-button has-poster"
+                type="button"
+                data-vk-owner="192439762"
+                data-vk-video="456239210"
+                aria-label="Открыть видео РЖЯ">
+          <img src="vk-video-poster.jpg" alt="" class="video-poster" loading="lazy">
+          <span class="video-poster-shade"></span>
+          <span class="poster-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6L17 12 9 7.2Z"/></svg></span>
+        </button>
+        <div class="word-card-body">
+          <h3>Тестовое видео РЖЯ</h3>
+          <p>Основные понятия и проект</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="video-modal" id="videoModal" hidden>
+      <div class="video-modal-backdrop" data-close-video></div>
+      <div class="video-modal-card">
+        <button class="video-close" type="button" data-close-video aria-label="Закрыть">×</button>
+        <div class="video-frame-wrap" id="videoFrameWrap"></div>
+        <a class="vk-external" id="vkExternal" href="#" target="_blank" rel="noopener">Открыть видео во VK →</a>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="footer-brand" href="index.html" aria-label="Феникс — наверх">
+      <img src="logo-phoenix.png" alt="Феникс">
+      <span><strong>Феникс</strong><small>Фестиваль инклюзивного спорта</small></span>
+    </a>
+    <nav class="footer-nav" aria-label="Навигация в подвале">
+      <a href="index.html#about">О проекте</a>
+      <a href="index.html#events">События</a>
+      <a href="#dictionary">Словарь РЖЯ</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <p class="footer-copy">© 2026 «Феникс»</p>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
