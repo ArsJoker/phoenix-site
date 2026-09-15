@@ -339,3 +339,252 @@ form button[type="submit"]:disabled{
  .feedback-grid{grid-template-columns:1fr;gap:0}.feedback-form{padding:20px}
  .features-v15 a{grid-template-columns:42px 1fr;column-gap:10px}.features-v15 .feature-icon{width:40px;height:40px;border-radius:13px}.features-v15 .feature-icon svg{width:22px;height:22px}
 }
+
+
+/* =========================================================
+   V16 — полноценная мобильная адаптация
+   Desktop-стили выше сохраняются без изменений.
+   ========================================================= */
+
+html,body{max-width:100%;overflow-x:hidden}
+img,video,iframe{max-width:100%}
+
+@media (max-width: 720px){
+  /* Шапка */
+  .site-header{
+    height:76px;
+    padding:0 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(5,5,5,.88);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .brand{gap:8px;position:relative;z-index:102}
+  .brand img{width:62px;height:62px;object-fit:contain}
+  .brand strong{display:none}
+  .header-cta{display:none}
+  .menu{
+    position:relative;z-index:103;
+    width:46px;height:46px;
+    display:grid;place-items:center;
+    padding:0;margin:0;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:14px;
+    background:rgba(255,255,255,.06);
+    color:#fff;font-size:27px;line-height:1;
+  }
+
+  /* Меню больше не перекрывает hero */
+  #nav{
+    position:fixed;
+    top:76px;left:12px;right:12px;
+    width:auto;height:auto;
+    padding:12px;
+    display:flex;flex-direction:column;gap:3px;
+    border:1px solid rgba(255,255,255,.13);
+    border-radius:18px;
+    background:rgba(9,9,9,.97);
+    box-shadow:0 24px 70px rgba(0,0,0,.55);
+    transform:translateY(-12px);
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:.22s ease;
+    z-index:101;
+  }
+  #nav.open{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}
+  #nav a{
+    display:block;width:100%;
+    padding:13px 14px;
+    border-radius:11px;
+    color:rgba(255,255,255,.88);
+    font-size:16px;line-height:1.2;
+  }
+  #nav a:hover{background:rgba(255,112,36,.10);color:#fff}
+
+  /* Первый экран */
+  .hero{
+    min-height:auto!important;
+    height:auto!important;
+    padding:76px 0 0!important;
+    display:block;
+  }
+  .hero-inner{
+    min-height:0!important;
+    height:auto!important;
+    padding:54px 20px 40px!important;
+    display:block!important;
+  }
+  .hero-copy{width:100%!important;max-width:none!important;position:relative;z-index:3}
+  .hero-copy .eyebrow{
+    margin-bottom:16px;
+    font-size:11px!important;
+    line-height:1.35;
+    letter-spacing:.20em!important;
+  }
+  .hero h1{
+    margin:0 0 22px!important;
+    font-size:clamp(47px,13vw,62px)!important;
+    line-height:.92!important;
+    letter-spacing:-.045em!important;
+    max-width:100%;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .hero .lead{
+    max-width:540px!important;
+    margin:0 0 28px!important;
+    font-size:17px!important;
+    line-height:1.55!important;
+  }
+  .hero .actions{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:11px!important;
+    width:100%;
+  }
+  .hero .actions .btn{
+    width:100%!important;
+    min-height:54px;
+    padding:14px 16px!important;
+    display:flex;align-items:center;justify-content:center;
+    box-sizing:border-box;
+    border-radius:17px!important;
+    font-size:15px!important;
+    text-align:center;
+  }
+
+  /* Декоративный второй логотип не мешает контенту */
+  .hero-logo-wrap{
+    display:none!important;
+  }
+
+  /* Карточки первого экрана: 2x2 */
+  .features,
+  .features-v15{
+    position:relative!important;
+    left:auto!important;right:auto!important;bottom:auto!important;
+    width:auto!important;
+    margin:0!important;
+    padding:18px 16px 28px!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    background:#080808;
+    border-top:1px solid rgba(255,255,255,.10);
+  }
+  .features-v15 a{
+    min-width:0!important;
+    min-height:104px!important;
+    padding:15px 12px!important;
+    box-sizing:border-box;
+    display:grid!important;
+    grid-template-columns:38px minmax(0,1fr)!important;
+    grid-template-rows:auto auto!important;
+    column-gap:9px!important;
+    border:1px solid rgba(255,255,255,.10)!important;
+    border-radius:17px!important;
+    background:linear-gradient(145deg,rgba(255,113,37,.11),rgba(255,255,255,.025))!important;
+  }
+  .features-v15 .feature-icon{
+    width:38px!important;height:38px!important;border-radius:12px!important;
+  }
+  .features-v15 .feature-icon svg{width:20px!important;height:20px!important}
+  .features-v15 a strong{
+    min-width:0;
+    font-size:13px!important;
+    line-height:1.15!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere;
+  }
+  .features-v15 a small{
+    min-width:0;
+    font-size:10px!important;
+    line-height:1.25!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere;
+  }
+  .scroll-down{display:none!important}
+
+  /* Общие секции */
+  .section{
+    padding-left:18px!important;
+    padding-right:18px!important;
+  }
+  .section h2{font-size:clamp(32px,9vw,44px)!important;line-height:1.05!important}
+  .section-head{display:block!important}
+  .section-head>p{margin-top:12px!important;max-width:none!important}
+
+  /* О проекте */
+  .about-v15{padding-top:64px!important}
+  .about-head{display:block!important;margin-bottom:28px!important}
+  .about-head .intro{margin-top:16px!important;font-size:16px!important;line-height:1.6!important}
+  .about-story{grid-template-columns:1fr!important;gap:12px!important}
+  .about-story article{padding:21px!important;border-radius:18px!important}
+  .about-story h3{font-size:20px!important}
+
+  /* Команда */
+  .project-team{
+    margin:52px -18px -80px!important;
+    padding:54px 18px 64px!important;
+  }
+  .team-title{margin-bottom:25px!important}
+  .team-grid{grid-template-columns:1fr!important;gap:16px!important}
+  .team-card,.team-card:last-child{grid-column:auto!important;max-width:none!important}
+  .team-photo{aspect-ratio:4/4.65!important}
+  .team-info{padding:18px!important}
+
+  /* События */
+  .event-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .event-card{padding:20px!important;border-radius:19px!important}
+  .event-top{gap:8px!important;align-items:flex-start!important;flex-wrap:wrap!important}
+  .event-meta{display:flex!important;flex-direction:column!important;gap:7px!important}
+  .event-card .btn{width:100%!important;justify-content:center!important}
+
+  /* Предложения */
+  .feedback-form{padding:19px!important;border-radius:18px!important}
+  .feedback-grid{grid-template-columns:1fr!important;gap:0!important}
+  .feedback-form input,.feedback-form select,.feedback-form textarea{
+    font-size:16px!important; /* iOS: без автоматического zoom */
+  }
+  .feedback-form .btn{width:100%!important;justify-content:center!important}
+
+  /* Словарь */
+  .dictionary .filters{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .dictionary .filters input,.dictionary .filters select{
+    width:100%!important;max-width:none!important;
+    box-sizing:border-box;
+    font-size:16px!important;
+  }
+  .words{grid-template-columns:1fr!important}
+  .vk-word-card{width:100%!important;min-width:0!important}
+  .poster-play{width:58px!important;height:58px!important}
+  .poster-play svg{width:27px!important;height:27px!important}
+
+  /* Контакты / футер / диалог */
+  .contact-grid{grid-template-columns:1fr!important}
+  dialog#dialog{
+    width:calc(100% - 24px)!important;
+    max-width:520px!important;
+    max-height:88dvh!important;
+    margin:auto!important;
+    border-radius:20px!important;
+  }
+  dialog#dialog form{max-height:82dvh;overflow:auto}
+  dialog#dialog input,dialog#dialog select{font-size:16px!important}
+}
+
+/* Очень узкие телефоны */
+@media (max-width: 390px){
+  .hero-inner{padding-left:17px!important;padding-right:17px!important}
+  .hero h1{font-size:45px!important}
+  .features,.features-v15{padding-left:12px!important;padding-right:12px!important;gap:8px!important}
+  .features-v15 a{padding:13px 9px!important;grid-template-columns:34px minmax(0,1fr)!important;column-gap:7px!important}
+  .features-v15 .feature-icon{width:34px!important;height:34px!important}
+  .features-v15 a strong{font-size:12px!important}
+  .features-v15 a small{font-size:9px!important}
+}

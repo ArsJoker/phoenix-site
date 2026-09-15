@@ -1,6 +1,11 @@
 const nav=document.getElementById('nav'),menu=document.getElementById('menu');
-menu.onclick=()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));};
-document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+menu.onclick=()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰';};
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';});
+document.addEventListener('click',e=>{
+  if(nav.classList.contains('open') && !nav.contains(e.target) && e.target!==menu){
+    nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';
+  }
+});
 
 const dialog=document.getElementById('dialog');
 document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>dialog.showModal());
