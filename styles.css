@@ -615,3 +615,45 @@ img,video,iframe{max-width:100%}
 .selected-event strong { display:block; font-size:18px; margin-bottom:6px; }
 .selected-event span { display:block; opacity:.72; font-size:14px; }
 .dictionary { min-height: calc(100vh - 180px); padding-top: 150px; }
+
+/* V20 desktop — smooth transition from dark hero into About section */
+@media (min-width: 721px){
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:-1px;
+    height:150px;
+    z-index:1;
+    pointer-events:none;
+    background:linear-gradient(to bottom,rgba(5,5,5,0),rgba(5,5,5,.18) 28%,rgba(245,238,232,.72) 74%,#fff 100%);
+  }
+  .about-v15{
+    position:relative;
+    margin-top:-2px;
+    padding-top:86px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 88% 0%,rgba(255,103,24,.10),transparent 34%),
+      linear-gradient(180deg,#fff 0%,#fffaf7 42%,#fff 100%);
+  }
+  .about-v15::before{
+    content:"";
+    position:absolute;
+    top:-58px;left:-4%;
+    width:108%;height:118px;
+    background:#fff;
+    border-radius:50% 50% 0 0 / 75% 75% 0 0;
+    transform:rotate(-1.2deg);
+    pointer-events:none;
+  }
+  .about-v15 > *{position:relative;z-index:1}
+  .about-head{grid-template-columns:1.05fr .95fr;gap:72px;align-items:end;margin-bottom:46px}
+  .about-head h2{max-width:780px;font-size:clamp(52px,4.7vw,78px);line-height:.98;letter-spacing:-.045em}
+  .about-head .intro{font-size:18px;line-height:1.65;color:#5d5d5d;max-width:610px}
+  .about-story{grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #eee;border-bottom:1px solid #eee}
+  .about-story article{border:0;border-radius:0;background:transparent;padding:34px 30px 38px 0;min-height:260px}
+  .about-story article+article{border-left:1px solid #eee;padding-left:30px}
+  .about-story article>span{background:transparent;color:#ff6718;border:1px solid rgba(255,103,24,.45);width:46px;height:46px;border-radius:50%;font-size:13px}
+  .about-story h3{font-size:21px;margin:20px 0 10px}
+  .about-story p{font-size:15px;line-height:1.65;color:#686868}
+}
