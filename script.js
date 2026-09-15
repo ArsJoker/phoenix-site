@@ -77,15 +77,11 @@ document.querySelectorAll('.vk-video-button').forEach(button=>{
 document.querySelectorAll('[data-close-video]').forEach(button=>button.addEventListener('click',closeVkVideo));
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && videoModal && !videoModal.hidden) closeVkVideo();});
 
-// V10 — регистрация из карточки события
+// V15 — регистрация из карточки события
 document.querySelectorAll('.event-register').forEach(button=>{
   button.addEventListener('click',()=>{
-    const dialog=document.getElementById('joinDialog');
-    const form=document.getElementById('joinForm') || document.querySelector('dialog form');
-    if(form){
-      const select=form.querySelector('[name="sport"]');
-      if(select) select.value=button.dataset.sport;
-    }
+    const sportSelect=form.querySelector('[name="sport"]');
+    if(sportSelect) sportSelect.value=button.dataset.sport || '';
     if(dialog && typeof dialog.showModal==='function') dialog.showModal();
   });
 });
@@ -114,25 +110,17 @@ if(consentForm){
 }
 
 
-// V13 — окно с полным текстом согласия
-const consentDetailsDialog=document.getElementById('consentDetailsDialog');
-const openConsentDetails=document.getElementById('openConsentDetails');
-const closeConsentDetails=document.getElementById('closeConsentDetails');
-const consentUnderstood=document.getElementById('consentUnderstood');
 
-function showConsentDetails(){
-  if(consentDetailsDialog && typeof consentDetailsDialog.showModal==='function'){
-    consentDetailsDialog.showModal();
-  }
-}
-function hideConsentDetails(){
-  if(consentDetailsDialog && consentDetailsDialog.open) consentDetailsDialog.close();
-}
-if(openConsentDetails) openConsentDetails.addEventListener('click',showConsentDetails);
-if(closeConsentDetails) closeConsentDetails.addEventListener('click',hideConsentDetails);
-if(consentUnderstood) consentUnderstood.addEventListener('click',hideConsentDetails);
-if(consentDetailsDialog){
-  consentDetailsDialog.addEventListener('click',e=>{
-    if(e.target===consentDetailsDialog) hideConsentDetails();
+// V15 — предложения и пожелания
+const feedbackForm=document.getElementById('feedbackForm');
+const feedbackStatus=document.getElementById('feedbackStatus');
+if(feedbackForm){
+  feedbackForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    const data=new FormData(feedbackForm);
+    const subject=`Предложение для проекта «Феникс»: ${data.get('feedbackTopic')}`;
+    const body=`Имя: ${data.get('feedbackName')}\nКонтакт: ${data.get('feedbackContact')}\nТема: ${data.get('feedbackTopic')}\n\nПредложение:\n${data.get('feedbackMessage')}`;
+    feedbackStatus.textContent='Открываем письмо — останется нажать «Отправить».';
+    window.location.href=`mailto:volt-02@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
