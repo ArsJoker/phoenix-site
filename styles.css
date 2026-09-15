@@ -667,3 +667,40 @@ img,video,iframe{max-width:100%}
   .project-team:after{content:"";position:absolute;left:-5%;right:-5%;top:-70px;height:150px;background:#fffaf5;border-radius:0 0 50% 50% / 0 0 55% 55%;transform:rotate(.8deg);pointer-events:none}
   .team-title,.team-grid{z-index:2}
 }
+
+/* ===== V23: compact seamless desktop transition HERO -> ABOUT ===== */
+@media (min-width: 721px){
+  /* Do not create a second copy of the hero image between sections. */
+  .hero:after{
+    height:72px!important;
+    bottom:-1px!important;
+    z-index:2!important;
+    background:linear-gradient(to bottom,rgba(8,7,6,0) 0%,rgba(20,15,11,.28) 45%,rgba(255,250,245,.92) 100%)!important;
+  }
+
+  .about-v15{
+    padding-top:86px!important;
+    background:linear-gradient(to bottom,#fff6ed 0%,#fff9f3 115px,#fffaf5 100%)!important;
+  }
+
+  /* Previous version repeated hero-sports-bg here, which produced the tall duplicated floor/ball strip. */
+  .about-v15:before{
+    background:none!important;
+    height:0!important;
+    opacity:0!important;
+    filter:none!important;
+  }
+
+  /* Keep the soft wave, but move it to the actual section boundary. */
+  .about-v15:after{
+    top:-54px!important;
+    height:108px!important;
+    background:#fff6ed!important;
+    border-radius:50% 50% 0 0 / 58% 58% 0 0!important;
+    transform:rotate(-.45deg)!important;
+  }
+
+  .about-head{
+    padding-top:28px!important;
+  }
+}
