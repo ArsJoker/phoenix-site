@@ -76,3 +76,16 @@ document.querySelectorAll('.vk-video-button').forEach(button=>{
 });
 document.querySelectorAll('[data-close-video]').forEach(button=>button.addEventListener('click',closeVkVideo));
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && videoModal && !videoModal.hidden) closeVkVideo();});
+
+// V10 — регистрация из карточки события
+document.querySelectorAll('.event-register').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const dialog=document.getElementById('joinDialog');
+    const form=document.getElementById('joinForm') || document.querySelector('dialog form');
+    if(form){
+      const select=form.querySelector('[name="sport"]');
+      if(select) select.value=button.dataset.sport;
+    }
+    if(dialog && typeof dialog.showModal==='function') dialog.showModal();
+  });
+});
