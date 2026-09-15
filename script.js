@@ -89,3 +89,26 @@ document.querySelectorAll('.event-register').forEach(button=>{
     if(dialog && typeof dialog.showModal==='function') dialog.showModal();
   });
 });
+
+
+// V12 — обязательное согласие перед отправкой заявки
+const dataConsent=document.getElementById('dataConsent');
+const consentSubmit=document.getElementById('submitButton') || document.querySelector('dialog form button[type="submit"]');
+
+function syncConsentButton(){
+  if(dataConsent && consentSubmit){
+    consentSubmit.disabled=!dataConsent.checked;
+  }
+}
+if(dataConsent){
+  dataConsent.addEventListener('change',syncConsentButton);
+  syncConsentButton();
+}
+
+// После успешного сброса формы кнопка снова должна быть неактивной.
+const consentForm=document.getElementById('joinForm') || document.querySelector('dialog form');
+if(consentForm){
+  consentForm.addEventListener('reset',()=>{
+    setTimeout(syncConsentButton,0);
+  });
+}

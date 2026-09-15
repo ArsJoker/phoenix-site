@@ -226,7 +226,12 @@
       </select>
     </label>
 
-    <button class="btn primary" id="submitButton" type="submit">Отправить заявку</button>
+    
+        <label class="consent-row">
+          <input type="checkbox" id="dataConsent" name="dataConsent" required>
+          <span>Я согласен(на) на обработку предоставленных данных для регистрации и связи со мной по вопросам мероприятий проекта «Феникс».</span>
+        </label>
+<button disabled class="btn primary" id="submitButton" type="submit">Отправить заявку</button>
     <p class="form-status" id="formStatus" aria-live="polite"></p>
   </form>
 </dialog>

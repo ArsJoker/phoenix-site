@@ -227,3 +227,29 @@ dialog{width:min(580px,calc(100% - 25px));padding:0;border:0;border-radius:25px}
   .contact-card small{font-size:12px;overflow-wrap:anywhere}
   .site-footer{padding-left:18px;padding-right:18px}
 }
+
+
+/* V12 — согласие на обработку данных */
+.consent-row{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  margin:4px 0 16px;
+  color:rgba(255,255,255,.68);
+  font-size:13px;
+  line-height:1.45;
+  cursor:pointer;
+}
+.consent-row input{
+  flex:0 0 auto;
+  width:18px;
+  height:18px;
+  margin-top:1px;
+  accent-color:#ff7024;
+}
+#submitButton:disabled,
+form button[type="submit"]:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+  filter:saturate(.45);
+}
