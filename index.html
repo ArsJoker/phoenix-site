@@ -66,6 +66,15 @@
       <article><i>02</i><h3>Спорт</h3><p>Тренировки и соревнования по разным направлениям.</p></article>
       <article><i>03</i><h3>Сообщество</h3><p>Новые знакомства, командная работа и поддержка.</p></article>
     </div>
+
+    <div class="project-team">
+      <div class="team-title"><span class="eyebrow">КОМАНДА ПРОЕКТА</span><h2>Команда «Феникса»</h2></div>
+      <div class="team-grid">
+        <article class="team-card"><div class="team-photo"><img src="team-arseniy.jpg" alt="Вебер Арсений" loading="lazy"></div><div class="team-info"><h3>Вебер Арсений</h3><p>Руководитель проекта «Феникс»</p></div></article>
+        <article class="team-card"><div class="team-photo"><img src="team-alexander.jpg" alt="Александр Шец" loading="lazy"></div><div class="team-info"><h3>Александр Шец</h3><p>Менеджер проекта</p></div></article>
+        <article class="team-card"><div class="team-photo"><img src="team-inna.jpg" alt="Жданова Инна" loading="lazy"></div><div class="team-info"><h3>Жданова Инна</h3><p>Наставник проекта</p></div></article>
+      </div>
+    </div>
   </section>
 
   <section id="events" class="section dark">
@@ -231,11 +240,9 @@
         <div class="consent-block">
           <label class="consent-row" for="dataConsent">
             <input type="checkbox" id="dataConsent" name="dataConsent" required>
-            <span>Я согласен(на) на обработку персональных данных для регистрации и связи со мной по вопросам мероприятий проекта «Феникс».</span>
+            <span>Я согласен(на) на обработку персональных данных и ознакомился(ась) с <a class="consent-document-link" href="https://disk.yandex.ru/d/akhnzzM2MT2--A" target="_blank" rel="noopener noreferrer">Согласием на обработку персональных данных</a>.</span>
           </label>
-          <button class="consent-link" id="openConsentDetails" type="button">Согласие на обработку персональных данных</button>
         </div>
-
 <button disabled class="btn primary" id="submitButton" type="submit">Отправить заявку</button>
     <p class="form-status" id="formStatus" aria-live="polite"></p>
   </form>
@@ -243,37 +250,6 @@
 
 <script src="script.js"></script>
 
-<dialog class="consent-dialog" id="consentDetailsDialog">
-  <div class="consent-dialog-inner">
-    <div class="consent-dialog-head">
-      <div>
-        <span class="eyebrow">ПЕРСОНАЛЬНЫЕ ДАННЫЕ</span>
-        <h2>Согласие на обработку персональных данных</h2>
-      </div>
-      <button class="consent-dialog-close" id="closeConsentDetails" type="button" aria-label="Закрыть">×</button>
-    </div>
-
-    <div class="consent-text">
-      <p>Отправляя заявку на участие в мероприятиях проекта «Феникс», я добровольно предоставляю указанные мной сведения и даю согласие на их обработку в целях регистрации на мероприятия и связи со мной по организационным вопросам.</p>
-
-      <h3>Какие данные мы получаем</h3>
-      <p>Имя и фамилия, указанный участником статус слуха, контактные данные и выбранный вид спорта.</p>
-
-      <h3>Для чего используются данные</h3>
-      <p>Для обработки заявки, формирования списка участников, организации тренировок и соревнований, а также для связи с участником по вопросам мероприятия.</p>
-
-      <h3>Как обрабатываются данные</h3>
-      <p>Данные могут собираться, записываться, систематизироваться, храниться, уточняться и использоваться только в объёме, необходимом для указанных целей. Данные не предназначены для публикации на сайте.</p>
-
-      <h3>Срок и отзыв согласия</h3>
-      <p>Согласие действует до достижения указанных целей либо до его отзыва участником. Для отзыва согласия или обращения по вопросам своих данных можно написать на электронную почту проекта: <a href="mailto:volt-02@mail.ru">volt-02@mail.ru</a>.</p>
-
-      <p class="consent-warning"><strong>Важно:</strong> это тестовая версия текста для прототипа сайта. Перед публичным запуском необходимо утвердить окончательный документ с реквизитами фактического оператора персональных данных и требованиями применимого законодательства.</p>
-    </div>
-
-    <button class="btn primary consent-understood" id="consentUnderstood" type="button">Понятно</button>
-  </div>
-</dialog>
 
 </body>
 </html>
