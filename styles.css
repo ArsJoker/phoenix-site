@@ -900,28 +900,25 @@ body:has(#dictionary){background:#100805;}
 #dictionary.dictionary{background:#100805!important;}
 body:has(#dictionary) .site-footer{background:#100805;}
 
-/* ===== V38: separate reliable desktop/mobile hero assets ===== */
-@media (min-width: 721px){
+/* V38 — reliable local hero backgrounds for desktop and mobile */
+@media (min-width:721px){
   .hero{
-    background-image:url('assets/desktop/hero-background.jpg')!important;
+    background-image:url('./hero-desktop.jpg')!important;
     background-size:cover!important;
     background-position:center center!important;
     background-repeat:no-repeat!important;
-    background-color:#080604!important;
+    background-color:#100805!important;
   }
 }
-@media (max-width: 720px){
+@media (max-width:720px){
   .hero{
-    background-image:url('assets/mobile/hero-background.jpg')!important;
+    background-image:url('./hero-mobile.jpg')!important;
     background-size:cover!important;
-    background-position:58% center!important;
+    background-position:center center!important;
     background-repeat:no-repeat!important;
-    background-color:#080604!important;
+    background-color:#100805!important;
   }
   .hero-overlay{
-    background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.66) 45%,rgba(5,5,5,.92) 100%)!important;
+    background:linear-gradient(180deg,rgba(0,0,0,.36) 0%,rgba(0,0,0,.68) 55%,rgba(5,5,5,.88) 100%)!important;
   }
-  #nav{z-index:1000!important}
-  .menu{z-index:1001!important}
-  .site-header{z-index:1002!important}
 }
