@@ -146,17 +146,37 @@ if(consentForm){
 
 
 
-// V15 — предложения и пожелания
+// V43 — предложения и пожелания → Google Таблица
 const feedbackForm=document.getElementById('feedbackForm');
 const feedbackStatus=document.getElementById('feedbackStatus');
+const FEEDBACK_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzOu7T3fOZc0M0QeVVolH9zUbhy3q2TW-Y1cDy0PAeySryRpgZSqSyHptKJOSyoXMdo/exec';
 if(feedbackForm){
-  feedbackForm.addEventListener('submit',e=>{
+  feedbackForm.addEventListener('submit',async e=>{
     e.preventDefault();
     const data=new FormData(feedbackForm);
-    const subject=`Предложение для проекта «Феникс»: ${data.get('feedbackTopic')}`;
-    const body=`Имя: ${data.get('feedbackName')}\nКонтакт: ${data.get('feedbackContact')}\nТема: ${data.get('feedbackTopic')}\n\nПредложение:\n${data.get('feedbackMessage')}`;
-    feedbackStatus.textContent='Открываем письмо — останется нажать «Отправить».';
-    window.location.href=`mailto:volt-02@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const button=feedbackForm.querySelector('button[type="submit"]');
+    const payload={
+      name:data.get('feedbackName'),
+      contact:data.get('feedbackContact'),
+      type:data.get('feedbackTopic'),
+      message:data.get('feedbackMessage')
+    };
+    feedbackStatus.textContent='Отправляем предложение…';
+    if(button) button.disabled=true;
+    try{
+      await fetch(FEEDBACK_SCRIPT_URL,{
+        method:'POST',
+        mode:'no-cors',
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body:JSON.stringify(payload)
+      });
+      feedbackForm.reset();
+      feedbackStatus.textContent='Спасибо! Ваше предложение отправлено.';
+    }catch(error){
+      feedbackStatus.textContent='Не удалось отправить. Попробуйте ещё раз.';
+    }finally{
+      if(button) button.disabled=false;
+    }
   });
 }
 
