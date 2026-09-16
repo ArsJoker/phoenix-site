@@ -772,3 +772,42 @@ img,video,iframe{max-width:100%}
 .methodical-paper img{display:block;width:100%;height:auto;border-radius:3px;}
 .methodical-preview>span{display:block;margin-top:22px;text-align:center;font-size:13px;font-weight:850;letter-spacing:.04em;color:#e96520;}
 @media(max-width:850px){.methodical-section{padding:72px 24px}.methodical-wrap{grid-template-columns:1fr;gap:48px}.methodical-preview{width:min(82vw,350px)}.methodical-copy h2{font-size:clamp(38px,11vw,58px)}}
+
+/* ===== V27: Suggestions — airier card + soft transition from Methodical ===== */
+.feedback-section{
+  position:relative;
+  overflow:hidden;
+  padding-top:118px;
+  padding-bottom:118px;
+  background:
+    radial-gradient(circle at 86% 18%,rgba(255,126,48,.13),transparent 27%),
+    radial-gradient(circle at 8% 82%,rgba(255,183,128,.13),transparent 30%),
+    linear-gradient(180deg,#fff2e7 0%,#fff8f1 15%,#f8f4ef 54%,#f4eee8 100%);
+}
+.feedback-section:before{
+  content:"";position:absolute;left:-6%;right:-6%;top:-66px;height:120px;
+  background:#fff2e7;border-radius:0 0 50% 50% / 0 0 58% 58%;
+  transform:rotate(-.6deg);pointer-events:none;
+}
+.feedback-section:after{
+  content:"";position:absolute;width:560px;height:560px;right:-250px;bottom:-330px;
+  border:1px solid rgba(238,106,34,.14);border-radius:50%;box-shadow:0 0 0 58px rgba(238,106,34,.035),0 0 0 116px rgba(238,106,34,.025);pointer-events:none;
+}
+.feedback-section .section-head,.feedback-section .feedback-form{position:relative;z-index:1}
+.feedback-section .section-head{max-width:1180px;margin:0 auto 0;align-items:end}
+.feedback-section .section-head>p{max-width:520px;color:#665d56;line-height:1.65}
+.feedback-section .eyebrow{color:#ef6a22}
+.feedback-form{
+  max-width:900px;margin:52px auto 0;padding:38px 40px 40px;
+  border-radius:30px;background:rgba(255,255,255,.88);
+  border:1px solid rgba(238,106,34,.13);
+  box-shadow:0 26px 75px rgba(91,52,25,.10),0 4px 18px rgba(91,52,25,.05);
+  backdrop-filter:blur(8px);
+}
+.feedback-form input,.feedback-form select,.feedback-form textarea{background:#fff;border-color:#e8ddd4}
+.feedback-form input:focus,.feedback-form select:focus,.feedback-form textarea:focus{background:#fff}
+@media(max-width:850px){
+  .feedback-section{padding-top:88px!important;padding-bottom:82px!important}
+  .feedback-section:before{top:-42px;height:78px}
+  .feedback-form{margin-top:34px!important;padding:22px!important;border-radius:22px!important}
+}
