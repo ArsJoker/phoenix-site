@@ -856,3 +856,17 @@ img,video,iframe{max-width:100%}
 .contact-card .contact-arrow svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .contact-card:hover .contact-arrow{transform:translateX(4px) scale(1.04);box-shadow:0 10px 28px rgba(255,98,22,.36),inset 0 1px 0 rgba(255,255,255,.35)!important}
 @media(max-width:520px){.contact-benefits{gap:10px!important}.contact-benefits span{min-width:0!important}.contact-benefits .benefit-icon{width:43px;height:43px}.contact-card .contact-arrow{width:42px!important;height:42px!important}}
+
+/* ===== V30: unified orange social badges + refreshed collaboration icon ===== */
+.contact-icon-vk,.contact-icon-tg,.contact-icon-max,.contact-icon-mail{
+  background:linear-gradient(145deg,#ff8b39,#ff5f17)!important;
+  color:#fff!important;
+  padding:10px!important;
+  box-shadow:0 7px 18px rgba(255,96,23,.22)!important;
+}
+.contact-icon-vk{padding:9px!important}
+.contact-icon-tg{padding:10px!important}
+.contact-icon-max{padding:9px!important}
+.contact-icon-max img{display:block;width:100%;height:100%;object-fit:contain;filter:none}
+.contact-icon-mail{padding:10px!important}
+.contact-benefits span:nth-child(2) .benefit-icon svg{width:27px;height:27px;stroke-width:1.9}
