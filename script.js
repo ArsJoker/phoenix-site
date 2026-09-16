@@ -12,7 +12,7 @@ document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>dialog?.showMo
 const closeButton=document.getElementById('close');
 if(closeButton) closeButton.onclick=()=>dialog.close();
 
-const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbx7wvkpEvXWzriyv0NVY1F7pa3-yOP9LsQcxazNKRWizLbWawc_TCTVFBry91N1P55t/exec';
+const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbz2UUiw8DTgtlF1QexuhhJuHlQBgYegsP6hKfxSgC33KnZNsfroTeIfZTLiP5ETIM-W/exec';
 const form=document.getElementById('form');
 const submitButton=document.getElementById('submitButton');
 const formStatus=document.getElementById('formStatus');
@@ -24,11 +24,19 @@ if(form) form.onsubmit=async e=>{
   formStatus.textContent='';
 
   try {
-    const data=new FormData(form);
+    const fd=new FormData(form);
+    const payload={
+      name: fd.get('name') || '',
+      hearingStatus: fd.get('hearingStatus') || '',
+      contact: fd.get('contact') || '',
+      sport: fd.get('sport') || 'Баскетбол'
+    };
+
     await fetch(FORM_ENDPOINT,{
       method:'POST',
       mode:'no-cors',
-      body:data
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(payload)
     });
 
     form.reset();
