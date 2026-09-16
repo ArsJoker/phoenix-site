@@ -885,3 +885,12 @@ img,video,iframe{max-width:100%}
 /* ===== V32: clean VK mark — no white corner artifacts ===== */
 .contact-icon-vk{overflow:hidden!important;background:linear-gradient(145deg,#ff8b39,#ff5f17)!important;padding:9px!important}
 .contact-icon-vk img{width:100%!important;height:100%!important;object-fit:contain!important;display:block!important}
+
+
+/* Правка 33 — обновлённая шапка */
+.site-header .brand-wordmark{display:flex;align-items:center;width:190px;height:64px;overflow:hidden;flex:0 0 auto;}
+.site-header .brand-wordmark img{width:100%;height:100%;object-fit:contain;display:block;}
+.site-header nav{gap:25px;}
+.site-header nav a{white-space:nowrap;}
+@media (max-width:1100px){.site-header .brand-wordmark{width:160px}.site-header nav{gap:17px;font-size:12px}}
+@media (max-width:850px){.site-header .brand-wordmark{width:155px;height:58px}.site-header .brand-wordmark img{width:100%;height:100%;object-fit:contain}}
