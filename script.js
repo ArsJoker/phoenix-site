@@ -1,11 +1,23 @@
 const nav=document.getElementById('nav'),menu=document.getElementById('menu');
-menu.onclick=()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰';};
-document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';});
-document.addEventListener('click',e=>{
-  if(nav.classList.contains('open') && !nav.contains(e.target) && e.target!==menu){
-    nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';
-  }
-});
+const mobileNav=()=>window.matchMedia('(max-width:720px)').matches;
+function closeNav(){
+  nav.classList.remove('open');
+  if(mobileNav()) nav.style.setProperty('display','none','important');
+  else nav.style.removeProperty('display');
+  menu.setAttribute('aria-expanded','false');
+  menu.textContent='☰';
+}
+function openNav(){
+  nav.classList.add('open');
+  nav.style.setProperty('display','flex','important');
+  menu.setAttribute('aria-expanded','true');
+  menu.textContent='×';
+}
+closeNav();
+menu.onclick=(e)=>{e.stopPropagation(); nav.classList.contains('open')?closeNav():openNav();};
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=closeNav);
+document.addEventListener('click',e=>{if(nav.classList.contains('open')&&!nav.contains(e.target))closeNav();});
+window.addEventListener('resize',closeNav);
 
 const dialog=document.getElementById('dialog');
 document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>dialog?.showModal());

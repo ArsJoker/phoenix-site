@@ -986,3 +986,9 @@ body:has(#dictionary) .site-footer{background:#100805;}
   .contact-card small{font-size:12px!important;line-height:1.35!important;white-space:normal!important;overflow-wrap:anywhere!important;}
   .contact-card .contact-arrow{display:grid!important;width:42px!important;height:42px!important;place-items:center!important;}
 }
+
+/* ===== V40: hard mobile nav reset ===== */
+@media (max-width:720px){
+  #nav{display:none!important;}
+  #nav.open{display:flex!important;}
+}
