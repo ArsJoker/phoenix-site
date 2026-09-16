@@ -839,3 +839,20 @@ img,video,iframe{max-width:100%}
 .contact-card b{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#ff7024;color:#111;font-size:22px}
 @media(max-width:850px){.contacts-shell{gap:42px}.contact-benefits{justify-content:flex-start}}
 @media(max-width:520px){.contact-benefits{gap:18px;justify-content:space-between}.contact-benefits span{min-width:0;flex:1;font-size:12px}.contacts-copy h2{font-size:46px}}
+
+/* ===== V29: polished contact icons and arrows ===== */
+.contact-benefits{gap:30px!important;align-items:flex-start}
+.contact-benefits span{display:flex!important;flex-direction:column;align-items:center;justify-content:flex-start;min-width:105px!important;color:rgba(255,255,255,.88);font-weight:650;line-height:1.25!important}
+.contact-benefits .benefit-icon{width:48px;height:48px;margin:0 auto 12px!important;border-radius:15px;display:grid!important;place-items:center;background:linear-gradient(145deg,rgba(255,125,52,.16),rgba(255,92,20,.05));border:1px solid rgba(255,126,52,.22);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 28px rgba(0,0,0,.16);transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.contact-benefits .benefit-icon svg{width:24px;height:24px;fill:none;stroke:#ff762b;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-benefits span:hover .benefit-icon{transform:translateY(-3px);border-color:rgba(255,126,52,.48);background:rgba(255,112,36,.12)}
+.contact-icon{overflow:hidden;padding:0!important;background:transparent!important;box-shadow:none!important}
+.contact-icon svg{display:block;width:100%;height:100%}
+.contact-icon-vk{background:#2787f5!important;color:#fff!important;padding:8px!important}
+.contact-icon-tg{background:#27a7e7!important;color:#fff!important;padding:10px!important}
+.contact-icon-max{background:transparent!important}
+.contact-icon-mail{background:linear-gradient(145deg,#ff8b39,#ff5f17)!important;color:#fff!important;padding:10px!important}
+.contact-card .contact-arrow{width:48px!important;height:48px!important;border-radius:50%!important;background:linear-gradient(145deg,#ff8a39,#ff5d16)!important;color:#111!important;box-shadow:0 8px 24px rgba(255,98,22,.24),inset 0 1px 0 rgba(255,255,255,.32)!important;transition:transform .2s ease,box-shadow .2s ease!important}
+.contact-card .contact-arrow svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.contact-card:hover .contact-arrow{transform:translateX(4px) scale(1.04);box-shadow:0 10px 28px rgba(255,98,22,.36),inset 0 1px 0 rgba(255,255,255,.35)!important}
+@media(max-width:520px){.contact-benefits{gap:10px!important}.contact-benefits span{min-width:0!important}.contact-benefits .benefit-icon{width:43px;height:43px}.contact-card .contact-arrow{width:42px!important;height:42px!important}}
