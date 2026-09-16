@@ -139,3 +139,15 @@ if(feedbackForm){
     window.location.href=`mailto:volt-02@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
+
+// V25 — flip team cards on click / keyboard
+function toggleTeamCard(card){
+  const flipped=card.classList.toggle('is-flipped');
+  card.setAttribute('aria-pressed',String(flipped));
+}
+document.querySelectorAll('.flip-card').forEach(card=>{
+  card.addEventListener('click',()=>toggleTeamCard(card));
+  card.addEventListener('keydown',e=>{
+    if(e.key==='Enter' || e.key===' '){e.preventDefault();toggleTeamCard(card);}
+  });
+});
