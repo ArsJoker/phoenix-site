@@ -870,3 +870,15 @@ img,video,iframe{max-width:100%}
 .contact-icon-max img{display:block;width:100%;height:100%;object-fit:contain;filter:none}
 .contact-icon-mail{padding:10px!important}
 .contact-benefits span:nth-child(2) .benefit-icon svg{width:27px;height:27px;stroke-width:1.9}
+
+/* ===== V31: user-supplied cooperation + VK marks ===== */
+.contact-benefits span:nth-child(2) .benefit-icon img{
+  display:block;width:29px;height:29px;object-fit:contain;
+}
+.contact-icon-vk{
+  background:linear-gradient(145deg,#ff8b39,#ff5f17)!important;
+  padding:9px!important;
+}
+.contact-icon-vk img{
+  display:block;width:100%;height:100%;object-fit:contain;
+}
